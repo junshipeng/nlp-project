@@ -1,4 +1,6 @@
 
 # 語料
 /corpus/*.txt
+/corpus/__pycache__
+
 

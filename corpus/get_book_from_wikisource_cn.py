@@ -6,9 +6,10 @@ from multiprocessing import Process, Queue
 import queue
 import time
 
-books = [ '史記', '漢書', '後漢書' , '三國志' , ]
+from books_list import books
 
 def all_tag(url,tag):
+    #print('url: %s'%url)
     response = urllib.request.urlopen(url)
     html = response.read().decode()
     soup = BeautifulSoup(html)
@@ -16,7 +17,7 @@ def all_tag(url,tag):
     return s
 
 host='https://zh.wikisource.org'
-prefix_first='/wiki/'
+prefix_first='/zh-hant/'
 
 def get_chapter(out_q,url):
     for e in map(lambda _:_.text, all_tag(url,'p')):
@@ -31,17 +32,21 @@ def get_book(name):
 
     for a in all_tag(host+prefix,'a'):
         ref = a.get('href')
-        if ref and ref.startswith(prefix+'/'):
-            process_queue.append( Process(target=get_chapter,args=(out_q,host+ref,)) )
+        if ref:
+            ref = ref.replace('/wiki/','/zh-hant/') # require Traditional Chinese
+            if ref.startswith(prefix+'/'):
+                process_queue.append( Process(target=get_chapter,args=(out_q,host+ref,)) )
+    
+    print("Totally %d for %s"%(len(process_queue),name))
 
     for p in process_queue:
         p.start()
-        time.sleep(0.05)
+        time.sleep(0.1)
 
     res = []
     while True:
         try:
-            e = out_q.get(timeout=3)
+            e = out_q.get(timeout=4)
             res.append( e )
         except queue.Empty:
             break
