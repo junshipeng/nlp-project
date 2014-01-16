@@ -4,13 +4,16 @@ from collections import defaultdict
 from functools import reduce
 from books_list import books
 
-punc_sep = '。，：？；！、＜＞「」『』《》【】〔〕［］“”"\'〈〉'
-punc_ignore = '（）()\'　[]'
+punc_sep = '。，：？；！'
+punc_ignore = '、（）()\'　[]＜＞「」『』《》【】〔〕［］“”"\'〈〉'
 
 def purify(line):
     l = line
     l = l.strip('\r\n')
 
+    
+    l = l.replace(' ','')
+        
     for p in punc_sep:
         l = l.replace(p,' ')
 

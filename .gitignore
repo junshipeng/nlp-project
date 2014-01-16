@@ -3,4 +3,5 @@
 /corpus/*.txt
 /corpus/__pycache__
 
-
+# rnnlm 樣例
+/rnnlm-simple-examples
