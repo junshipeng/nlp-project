@@ -57,7 +57,7 @@ def main():
             #score = list(map(float,open('./temp/rnnlm_test_score').readlines()))[0]
             score = rnnlm_test(srilmpath,rnnpath,temp,trainfile,'./data/test.rnnlm.txt',rnnmodel,word2vecmodel,lambda_value,nbest=True)[0]
             test_score += [score]
-            print(template,option,score)
+            #print(template,option,score)
         
         #print(test_score)
 
