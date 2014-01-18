@@ -3,15 +3,14 @@
 /corpus/*.txt
 /corpus/__pycache__
 
-# rnnlm 樣例
-/rnnlm-simple-examples
-
-# srilm tools
-/srilm
-
+# bin
+/bin/srilm
 
 # temp
-/temp
+/temp/*
 
 # models
-/model
+/model/*
+
+# data
+/data/*
