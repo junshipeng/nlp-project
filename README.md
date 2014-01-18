@@ -7,7 +7,7 @@ nlp-project
 
 ## 使用方法
 
-1. 建立以下活页夹：　`./data/` `./corpus/` `./models`　
+1. 建立以下文件夹：　`./data/` `./corpus/` `./models`　
 1. 编译 RNNLM： `cd ./bin/rnnlm/ && make`
 1. 编译 Word2vec： `cd ./bin/word2vec/ && make`
 1. 下载、编译 SRILM，并在`Config.py`中设置`srilmpath`。默认配置为`srilmpath=./bin/srilm/bin/i686-m64`
@@ -28,4 +28,4 @@ nlp-project
 
 * [rnnlm] (http://www.fit.vutbr.cz/~imikolov/rnnlm/) 
 * [srilm] (http://www.speech.sri.com/projects/srilm/)
-*
+* [word2vec] (https://code.google.com/p/word2vec/)
