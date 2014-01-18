@@ -5,7 +5,7 @@ This is a language model for Classical Chinese, a project for my course on Chine
 
 ## 使用方法
 
-1. 建立 `./data/` 和 `./corpus/` 兩個文件夾　
+1. 建立 `./data/`，`./corpus/` 和 `./models`  三個文件夾　
 1. 編譯 RNNLM： `cd ./bin/rnnlm/ && make`
 1. 編譯 Word2vec： `cd ./bin/word2vec/ && make`
 1. 下載、編譯 SRILM，並在`Config.py`中設置`srilmpath`。默認配置爲`srilmpath=./bin/srilm/bin/i686-m64`
