@@ -1,29 +1,31 @@
 nlp-project
 ===========
 
-This is a language model for Classical Chinese, a project for my course on Chinese NLP.
+复旦大学《中文信息处理》一课之期末Project
+
+作者：田应涛
 
 ## 使用方法
 
-1. 建立 `./data/`，`./corpus/` 和 `./models`  三個文件夾　
-1. 編譯 RNNLM： `cd ./bin/rnnlm/ && make`
-1. 編譯 Word2vec： `cd ./bin/word2vec/ && make`
-1. 下載、編譯 SRILM，並在`Config.py`中設置`srilmpath`。默認配置爲`srilmpath=./bin/srilm/bin/i686-m64`
-1. 下載語料： `./DownloadCorpus.py`
-1. 處理語料： `./PurifyCorpus.py`
-1. 生成數據： `./GenerateData.py`
-1. 訓練： `./Train.py`
-1. 測試可以有兩種：
-    * 一種是對着測試集求語言模型的PPL： `./Test.py`
-    * 一種是測試若干制定填空題： `./TestExamples`
-        輸入文件是 `./test.txt`，格式爲「題目　選項１　選項２　等等」，其中題目中的空用全角問號「？」表示，題目和選項、選項和選項之間的空格也是全角的。
+1. 建立以下活页夹：　`./data/` `./corpus/` `./models`　
+1. 编译 RNNLM： `cd ./bin/rnnlm/ && make`
+1. 编译 Word2vec： `cd ./bin/word2vec/ && make`
+1. 下载、编译 SRILM，并在`Config.py`中设置`srilmpath`。默认配置为`srilmpath=./bin/srilm/bin/i686-m64`
+1. 下载语料： `./DownloadCorpus.py`
+1. 处理语料： `./PurifyCorpus.py`
+1. 生成数据： `./GenerateData.py`
+1. 训练： `./Train.py`
+1. 测试可以有两种：
+    * 一种是对着测试集求语言模型的PPL： `./Test.py`
+    * 一种是测试若干制定填空题： `./TestExamples`
+        输入文件是 `./test.txt`，格式为「题目　选项１　选项２　等等」，其中题目中的空用全角问号「？」表示，题目和选项、选项和选项之间的空格也是全角的。
 
-## 語料之來源
+## 语料之来源
 
-* [維基文庫] (https://zh.wikisource.org/wiki/)
+* [维基文库] (https://zh.wikisource.org/wiki/)
 
 ## 所使用之工具
 
 * [rnnlm] (http://www.fit.vutbr.cz/~imikolov/rnnlm/) 
 * [srilm] (http://www.speech.sri.com/projects/srilm/)
-* [word2vec] (https://code.google.com/p/word2vec/) 
+*
