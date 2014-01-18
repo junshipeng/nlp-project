@@ -10,7 +10,7 @@
 /temp/*
 
 # models
-/model/*
+/models/*
 
 # data
 /data/*
